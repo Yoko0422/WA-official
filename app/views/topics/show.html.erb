@@ -1,0 +1,53 @@
+<p>　</p>
+
+<div class="contain">
+  <div class="row">
+    <div class="offset-sm-4">
+    
+      <p id="notice"><%= notice %></p>
+      
+      <p>
+        <%= @topic.genru %>
+      </p>
+      
+      <p>
+        <strong>投稿日:</strong>
+        <%= @topic.created_at.to_s(:datetime_jp) %>
+      </p>
+      
+      <p>
+        <strong>タイトル:</strong>
+        <%= @topic.title %>
+      </p>
+      
+      <p>
+        <strong>開始日:</strong>
+        <%= @topic.fdate %>
+      </p>
+      
+      <p>
+        <strong>終了日:</strong>
+        <%= @topic.edate %>
+      </p>
+      
+      <p>
+        <strong>テキスト:</strong>
+        <%= @topic.content %>
+      </p>
+      
+      <p>
+        <strong>ファイル:</strong>
+        <%= @topic.image %>
+      </p>
+      
+      <p>
+        <strong>場所:</strong>
+        <%= @topic.place_id %>
+      </p>
+  
+      <%= link_to '編集する', edit_topic_path(@topic) %> |
+      <%= link_to '戻る', topics_path %>
+    
+    </div>
+  </div>
+</div>

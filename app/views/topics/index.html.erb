@@ -1,0 +1,30 @@
+<!--お知らせ一覧ページ-->
+<div class="topic">
+  <div class="container-fluid top-m">
+    
+    <div class="row">
+      <div class="offset-md-3 cpl-md-6">
+        <% @topics.each do |topic| %>
+        <div class="box27">
+        <span class="box-title"><%= topic.genru %></span>
+        <h3><%= topic.title %></h3>
+        <p><%= topic.content %></p>
+        <p>   <%= topic.fdate %>
+            <%= topic.edate %>
+            <%= topic.content %>
+            <%= topic.image %>
+            <%= topic.place.name %>
+            <p>
+            <%= link_to '編集する', edit_topic_path(topic) %>
+            ><%= link_to '削除する', topic, method: :delete, data: { confirm: '削除してよろしいですか？' } %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <p> </p>
+    
+    <%= link_to 'New Topic', new_topic_path %>
+
+ </div>
+</div>

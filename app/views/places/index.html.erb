@@ -1,0 +1,44 @@
+<div class="link top-m">
+  
+  <!--  <p id="notice"><%= notice %></p> -->
+    
+       <% @places.each do |place| %>
+        <% if(place.name != '会場情報不要') %>
+          <div class="box26">
+            <span class="box-title">
+              <a href="<%= place.url %>"><%= place.name %></a>
+              </span>
+            <div><small><%= place.address %></small></div>
+            <div><%= place.content %></div>
+            <p>
+                <td><%= link_to 'Edit', edit_place_path(place) %></td>
+                <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+    
+    <% @places.each do |place| %>
+      <% if(place.name != '会場情報不要') %>
+          <div class="box17">
+            <p><strong><%= place.name %></strong></p>
+            <p><%= place.address %></p>
+            <p><%= place.content %></p>
+            <p>
+              <td><%= link_to 'Show', place %></td>
+                <td><%= link_to 'Edit', edit_place_path(place) %></td>
+                <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+            </p>
+          </div>
+        <% end %>  
+      <% end%>
+      </div>
+    
+    </div>
+    
+    <br>
+    
+    <%= link_to 'New Place', new_place_path %>
+    
+    </div>
+</div>

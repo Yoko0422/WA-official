@@ -1,0 +1,39 @@
+<div class="profile">
+  <div
+  style="background-image: url(<%= @profile.image %>);
+         background-position: 10% 20%;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         width: 100vw;
+         height: 100vh;">
+    
+  <div class="container top-m bg">
+    <p>　</p>
+    <p>　</p>
+    
+    <div class="row">
+      <div class="offset-md-3 col-md-6">
+       
+        <table border="1" class="table align-middle">
+          <tr>
+            <td>
+              <div><h2><%= @profile.user.name %></h2></div>
+            </td>
+          </tr>
+          <tr>
+            <td><%= simple_format(@profile.content) %></td>
+          </tr>
+          <tr>
+            <td>
+               <%= link_to '内容を編集する', edit_profile_path(@profile) %> |
+               <%= link_to 'プロフィールページに戻る', profiles_path %>
+            </td>
+          </tr>
+        </table>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div>
+</div>

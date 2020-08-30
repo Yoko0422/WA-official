@@ -1,0 +1,21 @@
+<!--プロフィール一覧ページ-->
+<div class="profile">
+  <div class="container">
+      <div class="row">
+        
+       <% @profiles.each do |profile| %>
+          <div class="col-sm-5 img">
+            <div class="nameplace">
+              <a href="profiles/<%= profile.id %>">
+              <img src="<%= profile.image %>" width="250" class="img-thumbnail">
+                <p><%= profile.user.name %></p>
+              </a>
+            </div>
+          </div>
+        <% end %>
+    </div>  
+  </div>
+  
+  <p>　</p>
+
+</div>

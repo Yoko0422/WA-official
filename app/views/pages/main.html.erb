@@ -1,0 +1,114 @@
+<%= image_tag '/assets/top.jpg', class: 'top' %>
+
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p id="profile">　</p>
+
+<div class="sub-title">
+  <span class="h3">作家プロフィール</span>
+</div>
+
+<p>　</p>
+
+<div class="container">
+    <div class="row">
+    
+    <div class="offset-sm-1 col-sm-3">
+      <div class="proimg">
+        <a href="#">
+        <%= image_tag '/assets/p2.jpg', class: 'img-thumbnail' %>
+        <p>飯塚</p>
+        </a>
+      </div>
+    </div>
+    
+    <div class="offset-sm-1 col-sm-3">
+      <div class="proimg">
+        <a href="#">
+        <%= image_tag '/assets/p5.jpg', class: 'img-thumbnail' %>
+        <p>呉羽</p>
+        </a>
+      </div>
+    </div>
+    
+    <div class="offset-sm-1 col-sm-3">
+      <div class="proimg">
+        <a href="#">
+        <%= image_tag '/assets/p4.jpg', class: 'img-thumbnail' %>
+        <p>小高</p>
+        </a>
+      </div>
+    </div>
+    
+    <div class="offset-sm-1 col-sm-3">
+      <div class="proimg">
+        <a href="#">
+          <%= image_tag '/assets/kawakami.jpg', class: 'img-thumbnail' %>
+        <p>川上</p>
+        </a>
+      </div>
+    </div>
+    
+    <div class="offset-sm-1 col-sm-3">
+      <div class="proimg">
+        <a href="#">
+        <%= image_tag '/assets/p3.jpg', class: 'img-thumbnail' %>
+        <p>矢川</p>
+        </a>
+      </div>
+    </div>
+    
+    <div class="offset-sm-1 col-sm-3">
+      <div class="proimg">
+        <a href="#">
+        <%= image_tag '/assets/p1.jpg', class: 'img-thumbnail' %>
+        <p>島田</p>
+        </a>
+      </div>
+    </div>
+  
+    </div>  
+  </div>
+  
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+
+<div class="sub-title">
+  <span class="h3" id="topic">最新情報</span>　<%= link_to '最新情報を更新する', new_topic_path %>
+</div>
+
+<% @topics.each do |topic| %>
+<div><%= topic.created_at.to_s(:datetime_jp) %></div>
+<div><%= topic.title %></div>
+<div><%= topic.content %></div>
+  <% end %>
+
+<%= link_to '過去の情報', topics_path %>
+<%= link_to '最新情報を更新する', new_topic_path %>
+
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+
+<div class="sub-title">
+  <span class="h3" id="past">過去の作品</span>
+</div>
+
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+
+<div class="sub-title">
+  <span class="h3" id="link">リンク</span>
+</div>
+
+  
+ <footer>
+    <div class="copy">© 2020 WA</div>
+ </footer>
+          

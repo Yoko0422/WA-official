@@ -1,0 +1,62 @@
+<%= form_with(model: topic, local: true) do |form| %>
+  <% if topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+      <% topic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <span class="radio">
+      <%= form.radio_button :genru, '総合' %>
+      <%= form.label :genru,  {value: '総合', style: "display: inline-block;"} %>
+    </span>
+    <span class="radio">
+      <%= form.radio_button :genru, '次回のお知らせ' %>
+      <%= form.label :genru,  {value: '次回のお知らせ', style: "display: inline-block;"} %>
+    </span>
+    <span class="radio">
+      <%= form.radio_button :genru, 'その他の展覧会情報' %>
+      <%= form.label :genru,  {value: 'その他の展覧会情報', style: "display: inline-block;"} %>
+    </span>
+  </div>
+
+  <div class="form-group">
+     <p><span class="label"><strong>タイトル:</strong></span></p>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="form-group">
+     <p><span class="label"><strong>開始日:</strong></span></p>
+    <%= form.date_field :fdate %>
+  </div>
+
+  <div class="form-group">
+     <p><span class="label"><strong>終了日:</strong></span></p>
+    <%= form.date_field :edate %>
+  </div>
+
+  <div class="form-group">
+     <p><span class="label"><strong>お知らせ内容:</strong></span></p>
+    <%= form.text_area :content, wrap: 'hard', size: '80x10', class: 'textarea' %>
+  </div>
+
+  <div class="form-group">
+     <p><span class="label"><strong>会場:</strong></span></p>
+    <%= form.select:place_id, Place.all.map{|o|[o.name,o.id]} %>
+  </div>
+  
+  <div class="form-group">
+     <p><span class="label"><strong>イメージ:</strong></span></p>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions">
+     <%= form.submit '上記の内容で登録', class: 'btn-flat-border' %>
+  </div>
+<% end %>

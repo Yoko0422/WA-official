@@ -1,0 +1,35 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+ <% end %>
+    
+    <div class="form-group">
+    <p><span class="label"><strong>名前:</strong></span></p>
+    <p><%= form.select:user_id, User.all.map{|o| [o.name, o.id]} %></>
+  </div>
+  
+  <div class="form-group">
+    <p><span class="label"><strong>プロフィール文:</strong></span></p>
+    <p><%= form.text_area :content, wrap: 'hard', size: "80x10" , class: 'textarea' %></p>
+  </div>
+
+  <div class="form-group">
+    <p><span class="label"><strong>イメージ画像:</strong></span></p>
+    <div><%= form.file_field :image %></div>
+  </div>
+
+  <p>　</p>
+  
+  <div class="actions">
+    <%= form.submit '上記の内容で登録', class: 'btn-flat-border' %>
+  </div>
+<% end %>
