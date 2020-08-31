@@ -28,7 +28,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
+        format.html { redirect_to @topic, notice: 'お知らせを投稿しました' }
         format.json { render :show, status: :created, location: @topic }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+        format.html { redirect_to @topic, notice: 'お知らせを更新しました' }
         format.json { render :show, status: :ok, location: @topic }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TopicsController < ApplicationController
   def destroy
     @topic.destroy
     respond_to do |format|
-      format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
+      format.html { redirect_to topics_url, notice: 'お知らせを削除しました' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class TopicsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def topic_params
-      params.require(:topic).permit(:genru, :title, :fdate, :edate, :content, :image, :place_id)
+      params.require(:topic).permit(:genru, :title, :fdate, :edate, :text, :image, :place_id)
     end
 end

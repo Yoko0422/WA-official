@@ -14,7 +14,14 @@
     
     <div class="form-group">
     <p><span class="label"><strong>名前:</strong></span></p>
-    <p><%= form.select:user_id, User.all.map{|o| [o.name, o.id]} %></>
+    <p><%= form.select :name, [["飯塚美恵子", "飯塚美恵子"],
+                            ["呉羽陽子", "呉羽陽子"],
+                            ["小高みどり", "小高みどり"],
+                            ["川上貴子", "川上貴子"],
+                            ["矢川", "矢川"],
+                            ["島田", "島田"],
+                           ], include_blank: "選択して下さい" %>
+   </p>
   </div>
   
   <div class="form-group">

@@ -1,9 +1,10 @@
 class CreateProfiles < ActiveRecord::Migration[5.2]
   def change
     create_table :profiles do |t|
+      t.string :name
+      t.string :genru
       t.string :content
       t.string :image
-      t.integer :user_id
 
       t.timestamps
     end

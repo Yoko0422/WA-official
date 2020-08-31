@@ -1,4 +1,7 @@
 class Profile < ApplicationRecord
-   belongs_to :user
+   validates :name, presence: true
+   validates :genru, presence: true
+   validates :text, presence: true
+   validates :image, presence: true
   
 end
