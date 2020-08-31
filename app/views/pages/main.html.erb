@@ -1,4 +1,13 @@
-<%= image_tag '/assets/top.jpg', class: 'top' %>
+<div class="cp_cssslider">
+	<div class="cp_slidewrapper">
+		<div class="cp_slide_item"><%= image_tag '/assets/top.jpg', class: 'top' %></div>
+		<div class="cp_slide_item"><%= image_tag '/assets/top2.jpg', class: 'top' %></div>
+		<div class="cp_slide_item"><%= image_tag '/assets/top3.jpg', class: 'top' %></div>
+	</div>
+</div>
+
+
+
 
 <p>　</p>
 <p>　</p>
@@ -74,10 +83,10 @@
 <p>　</p>
 <p>　</p>
 <p>　</p>
-<p>　</p>
+<p id="topic">　</p>
 
 <div class="sub-title">
-  <span class="h3" id="topic">最新情報</span>　<%= link_to '最新情報を更新する', new_topic_path %>
+  <span class="h3">最新情報</span>　<%= link_to '最新情報を更新する', new_topic_path %>
 </div>
 <% @topics.each do |topic| %>
 <div><span class="topic h4"><%= topic.title %></span></div>
@@ -96,23 +105,107 @@
 <p>　</p>
 <p>　</p>
 <p>　</p>
-<p>　</p>
+<p id="past">　</p>
 
 <div class="sub-title">
-  <span class="h3" id="past">過去の作品</span>
+  <span class="h3">過去の作品</span>
 </div>
 
 <p>　</p>
 <p>　</p>
 <p>　</p>
-<p>　</p>
+<p id="link">　</p>
 
 <div class="sub-title">
-  <span class="h3" id="link">リンク</span>
+  <span class="h3">リンク</span> <%= link_to 'リンクを追加', new_place_path %>
+</div>
+<% @places.each do |place| %>
+  <% if(place.name != '会場情報無し') %>
+    <div><span class="topic h4"><a href="<%= place.url %>" target="blank"><%= place.name %></a></span></div>
+    <div class="row">
+     <div class="offset-sm-1">
+        <div><small><%= place.address %></small></div>
+        <div><%= place.content %></div>
+        <p>
+        <td><%= link_to 'Edit', edit_place_path(place) %></td>
+        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+        </p>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+
+<p>　</p>
+<p>　</p>
+
+
+
+
+
+<div class="cp_accordionslide07">
+<div class="slideitem">
+<h2>飯塚美絵</h2>
+<div class="slidecont" title="飯塚美絵">
+<div class="text">
+<p>飯塚美絵</p>
+</div>
+</div>
+</div>
+<div class="slideitem">
+<h2>タイトル 2</h2>
+<div class="slidecont" title="タイトル 2">
+<div class="text">
+<p>テキスト2</p>
+</div>
+</div>
+</div>
+<div class="slideitem">
+<h2>タイトル 3</h2>
+<div class="slidecont" title="タイトル 3">
+<div class="text">
+<p>テキスト3</p>
+</div>
+</div>
+</div>
+<div class="slideitem">
+<h2>タイトル 4</h2>
+<div class="slidecont" title="タイトル 4">
+<div class="text">
+<p>テキスト4</p>
+</div>
+</div>
+</div>
+<div class="slideitem">
+<h2>タイトル 5</h2>
+<div class="slidecont" title="タイトル 5">
+<div class="text">
+<p>テキスト5</p>
+</div>
+</div>
+</div>
 </div>
 
-  
+
+
+
+
  <footer>
     <div class="copy">© 2020 WA</div>
  </footer>
-          
+
+<script src="dist/js/swiper.js"></script>
+
+<script>
+   var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true
+    },
+  });
+  </script>

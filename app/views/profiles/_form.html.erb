@@ -14,12 +14,23 @@
     
     <div class="form-group">
     <p><span class="label"><strong>名前:</strong></span></p>
-    <p><%= form.select :name, [["飯塚美恵子", "飯塚美恵子"],
+    <p><%= form.select :name, [["飯塚美絵", "飯塚美絵"],
                             ["呉羽陽子", "呉羽陽子"],
                             ["小高みどり", "小高みどり"],
                             ["川上貴子", "川上貴子"],
-                            ["矢川", "矢川"],
-                            ["島田", "島田"],
+                            ["矢川由美子", "矢川由美子"],
+                            ["島田芳博", "島田芳博"],
+                           ], include_blank: "選択して下さい" %>
+   </p>
+  </div>
+  
+  <div class="form-group">
+    <p><span class="label"><strong> 分野:</strong></span></p>
+    <p><%= form.select :genru, [["蝋纈染", "蝋纈染"],
+                            ["型染", "型染"],
+                            ["友禅染", "友禅染"],
+                            ["織", "織"],
+                            ["陶磁器", "陶磁器"],
                            ], include_blank: "選択して下さい" %>
    </p>
   </div>

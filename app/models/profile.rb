@@ -4,4 +4,5 @@ class Profile < ApplicationRecord
    validates :text, presence: true
    validates :image, presence: true
   
+   mount_uploader :image, ImageUploader
 end
