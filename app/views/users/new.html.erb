@@ -1,0 +1,53 @@
+  <div class="container">
+    <div class="row">
+      <div class="offset-sm-3 col-sm-4 users-new-container">
+        <h1 class="text-center text-white">Sign up</h1>
+        <%= form_for :session, url: login_path do |f| %>
+        
+          <div class="form-group">
+            <%= f.label :name, class: 'text-white' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :password, class: 'text-white' %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation, class: 'text-white' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+
+          <%= f.submit "登録", class: 'btn-block btn-white' %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+<%= form_for :session, url: login_path do |f| %>
+
+<div class="form-group">
+    <span class="radio">
+      <%= f.label :name, class: 'text-white' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </span>
+    <span class="radio">
+      <%= f.label :password, class: 'text-white' %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </span>
+    <span class="radio">
+      <%= form.radio_button :genru, 'その他の展覧会情報' %>
+      <%= form.label :genru,  {value: 'その他の展覧会情報', style: "display: inline-block;"} %>
+    </span>
+  </div>
+
+  <div class="form-group">
+     <%= f.label :password_confirmation, class: 'text-white' %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+     <%= f.submit '上記の内容で登録', class: 'btn-flat-border' %>
+  </div>
+<% end %>

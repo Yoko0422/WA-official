@@ -57,7 +57,7 @@ class ProfilesController < ApplicationController
   def destroy
     @profile.destroy
     respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
+      format.html { redirect_to @profile, notice: 'Profile was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:name, :genru, :text, :image)
+      params.require(:profile).permit(:name, :genru, :text, :image1, :image2)
     end
 end

@@ -37,12 +37,17 @@
   
   <div class="form-group">
     <p><span class="label"><strong>プロフィール文:</strong></span></p>
-    <p><%= form.text_area :content, wrap: 'hard', size: "80x10" , class: 'textarea' %></p>
+    <p><%= form.text_area :text, wrap: 'hard', size: "80x10" , class: 'textarea' %></p>
   </div>
 
   <div class="form-group">
-    <p><span class="label"><strong>イメージ画像:</strong></span></p>
-    <div><%= form.file_field :image %></div>
+    <p><span class="label"><strong>トップページ用画像:</strong></span></p>
+    <div><%= form.file_field :image1 %></div>
+  </div>
+  
+  <div class="form-group">
+    <p><span class="label"><strong>プロフィールページ用画像:</strong></span></p>
+    <div><%= form.file_field :image2 %></div>
   </div>
 
   <p>　</p>
